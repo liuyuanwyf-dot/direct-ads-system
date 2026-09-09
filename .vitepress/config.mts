@@ -4,7 +4,7 @@ export default defineConfig({
   lang: 'zh-CN',
   title: '直客广告系统产品文档',
   description: '直客广告系统的产品、交互、流程、数据与参考文档站点',
-  base: './',
+  base: '/direct-ads-system/',
   lastUpdated: true,
   themeConfig: {
     nav: [
