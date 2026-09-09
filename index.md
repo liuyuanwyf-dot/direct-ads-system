@@ -31,7 +31,7 @@ features:
 - [页面原型大纲](/交互/页面原型大纲)
 - [状态机整理](/流程/状态机整理)
 - [数据表设计草案](/数据/数据表设计草案)
-- [广告主认证泳道图](/参考/advertiser_identity_auth_swimlane.html)
+- [广告主认证泳道图](/参考/advertiser_identity_auth_swimlane)
 - [业务流程图](/参考/业务流程图)
 
 ## 说明

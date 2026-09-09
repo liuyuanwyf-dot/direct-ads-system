@@ -43,7 +43,7 @@ export default defineConfig({
       {
         text: '参考素材',
         items: [
-          { text: '广告主认证泳道图', link: '/参考/advertiser_identity_auth_swimlane.html' },
+          { text: '广告主认证泳道图', link: '/参考/advertiser_identity_auth_swimlane' },
           { text: '业务流程图', link: '/参考/业务流程图.png' }
         ]
       }
