@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>广告主身份认证泳道图</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --lane-a: #f4fbf7;
+      --lane-b: #f8f5ff;
+      --line: #83b9a2;
+      --line-strong: #4e8f77;
+      --text: #1f2937;
+      --muted: #5f6b7a;
+      --accent: #2f6f5d;
+      --warn: #b85d2d;
+      --ok: #3f7f55;
+      --shadow: 0 10px 30px rgba(22, 34, 48, 0.08);
+    }
+
+    html, body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(131, 185, 162, 0.12), transparent 30%),
+        radial-gradient(circle at top right, rgba(140, 120, 220, 0.08), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    }
+
+    .wrap {
+      max-width: 1800px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(131, 185, 162, 0.22);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+    }
+
+    .header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 24px 10px;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 26px;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+    }
+
+    .subtitle {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .legend {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .dot.client { background: #83b9a2; }
+    .dot.system { background: #a995e8; }
+    .dot.ok { background: #4b9a62; }
+    .dot.warn { background: #cb6b3f; }
+
+    .canvas {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .note {
+      padding: 0 24px 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 920px) {
+      .wrap { padding: 12px; }
+      .header { flex-direction: column; align-items: flex-start; }
+      .title { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="header">
+        <div>
+          <h1 class="title">广告主身份认证流程图（泳道图）</h1>
+          <p class="subtitle">泳道：直客端、审核系统。流程按你提供的步骤整理，并把可后置的支付绑定单独标注出来。</p>
+        </div>
+        <div class="legend" aria-hidden="true">
+          <span><i class="dot client"></i>直客端</span>
+          <span><i class="dot system"></i>审核系统</span>
+          <span><i class="dot ok"></i>通过</span>
+          <span><i class="dot warn"></i>待补充/未通过</span>
+        </div>
+      </div>
+
+      <svg class="canvas" viewBox="0 0 1800 1880" role="img" aria-label="广告主身份认证泳道图">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#5c7f73"></path>
+          </marker>
+          <marker id="arrowSoft" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#8e78d4"></path>
+          </marker>
+          <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#203040" flood-opacity="0.08"></feDropShadow>
+          </filter>
+        </defs>
+
+        <!-- Lane backgrounds -->
+        <rect x="36" y="118" width="830" height="1650" rx="24" fill="#f4fbf7" stroke="rgba(131,185,162,0.18)"></rect>
+        <rect x="934" y="118" width="830" height="1650" rx="24" fill="#f8f5ff" stroke="rgba(169,149,232,0.18)"></rect>
+
+        <!-- Lane labels -->
+        <rect x="64" y="142" width="150" height="50" rx="15" fill="#e4f3eb" stroke="#83b9a2"></rect>
+        <text x="139" y="174" text-anchor="middle" font-size="18" fill="#2d5f50" font-weight="700">直客端</text>
+        <rect x="962" y="142" width="150" height="50" rx="15" fill="#ece5fb" stroke="#a995e8"></rect>
+        <text x="1037" y="174" text-anchor="middle" font-size="18" fill="#624faa" font-weight="700">审核系统</text>
+
+        <!-- Lane titles -->
+        <text x="500" y="214" text-anchor="middle" font-size="20" fill="#2d5f50" font-weight="700">申请填写</text>
+        <text x="1398" y="214" text-anchor="middle" font-size="20" fill="#624faa" font-weight="700">审核处理</text>
+
+        <!-- Vertical guide lines -->
+        <line x1="450" y1="228" x2="450" y2="1622" stroke="rgba(94,111,127,0.12)" stroke-width="2" stroke-dasharray="6 8"></line>
+        <line x1="1348" y1="228" x2="1348" y2="1622" stroke="rgba(94,111,127,0.12)" stroke-width="2" stroke-dasharray="6 8"></line>
+
+        <!-- Client lane cards -->
+        <g filter="url(#softShadow)">
+          <rect x="250" y="260" width="400" height="110" rx="20" fill="#ffffff" stroke="#83b9a2" stroke-width="2"></rect>
+          <text x="450" y="299" text-anchor="middle" font-size="22" fill="#1f2937" font-weight="700">填写账号归属</text>
+          <text x="450" y="328" text-anchor="middle" font-size="14" fill="#5f6b7a">公司 / 授权人 / 个人（本期不做）</text>
+        </g>
+        <line x1="450" y1="370" x2="450" y2="418" stroke="#4e8f77" stroke-width="4" marker-end="url(#arrow)"></line>
+
+        <g filter="url(#softShadow)">
+          <rect x="250" y="420" width="400" height="110" rx="20" fill="#ffffff" stroke="#83b9a2" stroke-width="2"></rect>
+          <text x="450" y="459" text-anchor="middle" font-size="22" fill="#1f2937" font-weight="700">业务类型选择</text>
+        </g>
+        <line x1="450" y1="530" x2="450" y2="578" stroke="#4e8f77" stroke-width="4" marker-end="url(#arrow)"></line>
+
+        <g filter="url(#softShadow)">
+          <rect x="250" y="580" width="400" height="110" rx="20" fill="#ffffff" stroke="#83b9a2" stroke-width="2"></rect>
+          <text x="450" y="619" text-anchor="middle" font-size="22" fill="#1f2937" font-weight="700">品牌填写</text>
+          <text x="450" y="648" text-anchor="middle" font-size="14" fill="#5f6b7a">品牌与业务的关系</text>
+        </g>
+        <line x1="450" y1="690" x2="450" y2="738" stroke="#4e8f77" stroke-width="4" marker-end="url(#arrow)"></line>
+
+        <g filter="url(#softShadow)">
+          <rect x="220" y="740" width="460" height="150" rx="20" fill="#ffffff" stroke="#83b9a2" stroke-width="2"></rect>
+          <text x="450" y="779" text-anchor="middle" font-size="22" fill="#1f2937" font-weight="700">填写业务主体信息</text>
+          <text x="450" y="809" text-anchor="middle" font-size="14" fill="#5f6b7a">公司名称、地址、联系方式</text>
+          <text x="450" y="835" text-anchor="middle" font-size="14" fill="#5f6b7a">法人身份证明、联系方式</text>
+          <text x="450" y="861" text-anchor="middle" font-size="14" fill="#5f6b7a">受益人身份说明、授权人信息</text>
+        </g>
+        <line x1="450" y1="890" x2="450" y2="948" stroke="#4e8f77" stroke-width="4" marker-end="url(#arrow)"></line>
+
+        <g filter="url(#softShadow)">
+          <rect x="220" y="950" width="460" height="150" rx="20" fill="#ffffff" stroke="#83b9a2" stroke-width="2"></rect>
+          <text x="450" y="989" text-anchor="middle" font-size="22" fill="#1f2937" font-weight="700">上传业务相关文件</text>
+          <text x="450" y="1019" text-anchor="middle" font-size="14" fill="#5f6b7a">营业执照 / 组织机构代码证</text>
+          <text x="450" y="1045" text-anchor="middle" font-size="14" fill="#5f6b7a">公司接收验证信息的邮箱</text>
+          <text x="450" y="1071" text-anchor="middle" font-size="14" fill="#5f6b7a">法人 / 授权人持证照片、手机号</text>
+        </g>
+        <line x1="450" y1="1100" x2="450" y2="1158" stroke="#4e8f77" stroke-width="4" marker-end="url(#arrow)"></line>
+
+        <g filter="url(#softShadow)">
+          <rect x="230" y="1160" width="440" height="112" rx="20" fill="#fff8ef" stroke="#d8a26c" stroke-width="2"></rect>
+          <text x="450" y="1196" text-anchor="middle" font-size="22" fill="#9d5a24" font-weight="700">提交审核</text>
+          <text x="450" y="1224" text-anchor="middle" font-size="14" fill="#b46a31">完成后进入审核系统</text>
+        </g>
+
+        <g filter="url(#softShadow)">
+          <rect x="260" y="1320" width="380" height="130" rx="20" fill="#fffdf7" stroke="#d6b66f" stroke-width="2"></rect>
+          <text x="450" y="1357" text-anchor="middle" font-size="22" fill="#1f2937" font-weight="700">支付绑定</text>
+          <text x="450" y="1385" text-anchor="middle" font-size="14" fill="#5f6b7a">可后置，复用直通车逻辑</text>
+          <text x="450" y="1411" text-anchor="middle" font-size="14" fill="#5f6b7a">渠道 / 主体关联 / 币种设定</text>
+        </g>
+
+        <g filter="url(#softShadow)">
+          <rect x="204" y="1476" width="492" height="142" rx="18" fill="rgba(255,255,255,0.78)" stroke="rgba(131,185,162,0.22)"></rect>
+          <text x="232" y="1510" font-size="15" fill="#4b5563" font-weight="700">补充说明</text>
+          <text x="312" y="1510" font-size="14" fill="#4b5563">受益人身份证明：直接或间接持有公司 &gt;25% 股权，或实际控制权的自然人，必须申报。</text>
+          <text x="312" y="1536" font-size="14" fill="#4b5563">授权人身份信息：仅在选择授权人时填写；个人类型本期不做。</text>
+          <text x="312" y="1562" font-size="14" fill="#4b5563">支付绑定可以后置，不影响主流程提交。</text>
+        </g>
+
+        <!-- Handoff to system lane -->
+        <path d="M 680 1220 C 820 1220, 840 360, 920 360" fill="none" stroke="#c8a56c" stroke-width="4" stroke-dasharray="10 8" marker-end="url(#arrow)"></path>
+        <text x="770" y="1268" text-anchor="middle" font-size="14" fill="#b46a31">提交后进入审核系统</text>
+
+        <!-- System lane cards -->
+        <g filter="url(#softShadow)">
+          <rect x="960" y="260" width="400" height="110" rx="20" fill="#ffffff" stroke="#a995e8" stroke-width="2"></rect>
+          <text x="1160" y="299" text-anchor="middle" font-size="22" fill="#1f2937" font-weight="700">审核系统接收申请</text>
+          <text x="1160" y="328" text-anchor="middle" font-size="14" fill="#5f6b7a">进入审核队列</text>
+        </g>
+        <line x1="1160" y1="370" x2="1160" y2="418" stroke="#8a72d4" stroke-width="4" marker-end="url(#arrowSoft)"></line>
+
+        <g filter="url(#softShadow)">
+          <rect x="960" y="420" width="400" height="110" rx="20" fill="#ffffff" stroke="#a995e8" stroke-width="2"></rect>
+          <text x="1160" y="459" text-anchor="middle" font-size="22" fill="#1f2937" font-weight="700">校验账号归属与资料完整性</text>
+          <text x="1160" y="488" text-anchor="middle" font-size="14" fill="#5f6b7a">检查主体、业务信息、上传文件</text>
+        </g>
+        <line x1="1160" y1="530" x2="1160" y2="578" stroke="#8a72d4" stroke-width="4" marker-end="url(#arrowSoft)"></line>
+
+        <g filter="url(#softShadow)">
+          <rect x="960" y="580" width="400" height="110" rx="20" fill="#ffffff" stroke="#a995e8" stroke-width="2"></rect>
+          <text x="1160" y="619" text-anchor="middle" font-size="22" fill="#1f2937" font-weight="700">审核支付绑定信息</text>
+          <text x="1160" y="648" text-anchor="middle" font-size="14" fill="#5f6b7a">如已填写，则一并校验</text>
+        </g>
+        <line x1="1160" y1="690" x2="1160" y2="738" stroke="#8a72d4" stroke-width="4" marker-end="url(#arrowSoft)"></line>
+
+        <g filter="url(#softShadow)">
+          <rect x="930" y="740" width="460" height="150" rx="20" fill="#ffffff" stroke="#a995e8" stroke-width="2"></rect>
+          <text x="1160" y="779" text-anchor="middle" font-size="22" fill="#1f2937" font-weight="700">审核结论</text>
+          <text x="1160" y="809" text-anchor="middle" font-size="14" fill="#5f6b7a">资料齐全且符合规则？</text>
+          <text x="1160" y="835" text-anchor="middle" font-size="14" fill="#5f6b7a">通过 / 未通过 / 待资料补充</text>
+        </g>
+
+        <!-- Outcomes -->
+        <path d="M 1390 815 C 1460 815, 1460 760, 1488 760" fill="none" stroke="#4b9a62" stroke-width="4" marker-end="url(#arrow)"></path>
+        <path d="M 1390 830 C 1460 830, 1460 880, 1488 880" fill="none" stroke="#cc7b53" stroke-width="4" marker-end="url(#arrow)"></path>
+        <path d="M 1390 850 C 1460 850, 1460 1000, 1488 1000" fill="none" stroke="#cc7b53" stroke-width="4" marker-end="url(#arrow)"></path>
+
+        <g filter="url(#softShadow)">
+          <rect x="1490" y="726" width="194" height="80" rx="18" fill="#eef9f0" stroke="#79b487" stroke-width="2"></rect>
+          <text x="1587" y="760" text-anchor="middle" font-size="20" fill="#2f7b52" font-weight="700">审核通过</text>
+          <text x="1587" y="786" text-anchor="middle" font-size="14" fill="#3b8d61">可正常开户</text>
+        </g>
+
+        <g filter="url(#softShadow)">
+          <rect x="1490" y="846" width="194" height="80" rx="18" fill="#fff2ef" stroke="#d59a8a" stroke-width="2"></rect>
+          <text x="1587" y="880" text-anchor="middle" font-size="20" fill="#a0523d" font-weight="700">待资料补充</text>
+          <text x="1587" y="906" text-anchor="middle" font-size="14" fill="#b25e47">退回直客端修改</text>
+        </g>
+
+        <g filter="url(#softShadow)">
+          <rect x="1490" y="966" width="194" height="80" rx="18" fill="#fff5f5" stroke="#d59a8a" stroke-width="2"></rect>
+          <text x="1587" y="1000" text-anchor="middle" font-size="20" fill="#a0523d" font-weight="700">审核未通过</text>
+          <text x="1587" y="1026" text-anchor="middle" font-size="14" fill="#b25e47">结束或重新发起</text>
+        </g>
+
+        <g filter="url(#softShadow)">
+          <circle cx="1728" cy="766" r="30" fill="#eef9f0" stroke="#79b487" stroke-width="2"></circle>
+          <text x="1728" y="772" text-anchor="middle" font-size="14" fill="#2f7b52" font-weight="700">结束</text>
+        </g>
+        <line x1="1684" y1="766" x2="1650" y2="766" stroke="#4b9a62" stroke-width="4" marker-end="url(#arrow)"></line>
+
+        <!-- Bottom note -->
+        <g>
+          <rect x="204" y="1664" width="1460" height="110" rx="18" fill="rgba(255,255,255,0.76)" stroke="rgba(169,149,232,0.2)"></rect>
+          <text x="230" y="1698" font-size="15" fill="#4b5563" font-weight="700">审核规则提示</text>
+          <text x="342" y="1698" font-size="14" fill="#4b5563">1. 默认状态为待审核。</text>
+          <text x="342" y="1724" font-size="14" fill="#4b5563">2. 缺少资料则返回待资料补充；规则不满足则未通过。</text>
+          <text x="342" y="1750" font-size="14" fill="#4b5563">3. 支付绑定可后置处理，因此单独作为可选模块展示。</text>
+        </g>
+      </svg>
+
+      <div class="note">如果你想，我还可以把这份图再改成更“产品文档风格”的版本，或者导出成 Mermaid / PNG 版，方便直接塞进方案里。</div>
+    </div>
+  </div>
+</body>
+</html>

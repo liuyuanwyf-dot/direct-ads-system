@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>直客广告系统产品文档索引</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --panel: rgba(255, 255, 255, 0.86);
+      --panel-strong: #ffffff;
+      --text: #1f2937;
+      --muted: #5f6b7a;
+      --accent: #2563eb;
+      --accent-2: #0f766e;
+      --line: rgba(37, 99, 235, 0.14);
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.10), transparent 28%),
+        radial-gradient(circle at top right, rgba(15, 118, 110, 0.10), transparent 26%),
+        linear-gradient(180deg, #fbfdff 0%, var(--bg) 100%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 20px 40px;
+    }
+
+    .hero {
+      background: var(--panel);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(37, 99, 235, 0.12);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-bottom: 18px;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.15;
+      letter-spacing: 0.2px;
+    }
+
+    .subtitle {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .tips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(37, 99, 235, 0.12);
+      color: #324155;
+      font-size: 13px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--panel-strong);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .card-head {
+      padding: 18px 20px 12px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+    }
+
+    .card-title {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .card-subtitle {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .list {
+      list-style: none;
+      margin: 0;
+      padding: 10px;
+    }
+
+    .item {
+      display: block;
+      padding: 12px 12px;
+      margin: 8px 0;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+      background: linear-gradient(180deg, rgba(248, 250, 252, 0.75), rgba(255, 255, 255, 0.95));
+    }
+
+    .item:hover {
+      transform: translateY(-1px);
+      border-color: rgba(37, 99, 235, 0.22);
+      background: #ffffff;
+    }
+
+    .item-name {
+      display: block;
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 4px;
+      color: #17324d;
+    }
+
+    .item-path {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      word-break: break-all;
+    }
+
+    .footer {
+      margin-top: 18px;
+      padding: 16px 18px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; }
+      .title { font-size: 24px; }
+      .hero { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1 class="title">直客广告系统产品文档索引</h1>
+      <p class="subtitle">
+        这是一个可直接点击的 HTML 目录页。请用浏览器打开这份文件，然后点每个条目跳转到对应文档。
+      </p>
+      <div class="tips">
+        <span class="pill">产品总览</span>
+        <span class="pill">页面与交互</span>
+        <span class="pill">业务流程</span>
+        <span class="pill">数据设计</span>
+        <span class="pill">参考素材</span>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <div class="card-head">
+          <h2 class="card-title">1. 产品总览</h2>
+          <p class="card-subtitle">看全局模块、页面拆分和菜单路由。</p>
+        </div>
+        <ul class="list">
+          <li>
+            <a class="item" href="产品/业务模块与页面清单.md">
+              <span class="item-name">业务模块与页面清单.md</span>
+              <span class="item-path">产品/业务模块与页面清单.md</span>
+            </a>
+          </li>
+          <li>
+            <a class="item" href="产品/菜单路由结构.md">
+              <span class="item-name">菜单路由结构.md</span>
+              <span class="item-path">产品/菜单路由结构.md</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2 class="card-title">2. 页面与交互</h2>
+          <p class="card-subtitle">看 PRD 表、页面功能和原型大纲。</p>
+        </div>
+        <ul class="list">
+          <li>
+            <a class="item" href="交互/PRD页面功能表.md">
+              <span class="item-name">PRD页面功能表.md</span>
+              <span class="item-path">交互/PRD页面功能表.md</span>
+            </a>
+          </li>
+          <li>
+            <a class="item" href="交互/页面原型大纲.md">
+              <span class="item-name">页面原型大纲.md</span>
+              <span class="item-path">交互/页面原型大纲.md</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2 class="card-title">3. 业务规则与流程</h2>
+          <p class="card-subtitle">看账号、认证、计划和投放状态机。</p>
+        </div>
+        <ul class="list">
+          <li>
+            <a class="item" href="流程/状态机整理.md">
+              <span class="item-name">状态机整理.md</span>
+              <span class="item-path">流程/状态机整理.md</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2 class="card-title">4. 数据设计</h2>
+          <p class="card-subtitle">看字段字典、状态字段和关联关系。</p>
+        </div>
+        <ul class="list">
+          <li>
+            <a class="item" href="数据/数据表设计草案.md">
+              <span class="item-name">数据表设计草案.md</span>
+              <span class="item-path">数据/数据表设计草案.md</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card full">
+        <div class="card-head">
+          <h2 class="card-title">5. 参考素材</h2>
+          <p class="card-subtitle">流程图和认证泳道图。</p>
+        </div>
+        <ul class="list">
+          <li>
+            <a class="item" href="参考/advertiser_identity_auth_swimlane.html">
+              <span class="item-name">advertiser_identity_auth_swimlane.html</span>
+              <span class="item-path">参考/advertiser_identity_auth_swimlane.html</span>
+            </a>
+          </li>
+          <li>
+            <a class="item" href="参考/业务流程图.png">
+              <span class="item-name">业务流程图.png</span>
+              <span class="item-path">参考/业务流程图.png</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="footer">
+      推荐用浏览器打开本文件，点击条目即可查看对应文档。
+    </div>
+  </div>
+</body>
+</html>
