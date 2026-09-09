@@ -7,10 +7,10 @@ hero:
   actions:
     - theme: brand
       text: 打开产品总览
-      link: /direct-ads-system/产品/业务模块与页面清单
+      link: /产品/业务模块与页面清单
     - theme: alt
       text: 查看业务流程图
-      link: /direct-ads-system/参考/业务流程图
+      link: /参考/业务流程图
 
 features:
   - title: 产品总览
@@ -25,14 +25,14 @@ features:
 
 ## 快速入口
 
-- [业务模块与页面清单](/direct-ads-system/产品/业务模块与页面清单)
-- [菜单路由结构](/direct-ads-system/产品/菜单路由结构)
-- [PRD页面功能表](/direct-ads-system/交互/PRD页面功能表)
-- [页面原型大纲](/direct-ads-system/交互/页面原型大纲)
-- [状态机整理](/direct-ads-system/流程/状态机整理)
-- [数据表设计草案](/direct-ads-system/数据/数据表设计草案)
-- [广告主认证泳道图](/direct-ads-system/参考/advertiser_identity_auth_swimlane.html)
-- [业务流程图](/direct-ads-system/参考/业务流程图)
+- [业务模块与页面清单](/产品/业务模块与页面清单)
+- [菜单路由结构](/产品/菜单路由结构)
+- [PRD页面功能表](/交互/PRD页面功能表)
+- [页面原型大纲](/交互/页面原型大纲)
+- [状态机整理](/流程/状态机整理)
+- [数据表设计草案](/数据/数据表设计草案)
+- [广告主认证泳道图](/参考/advertiser_identity_auth_swimlane.html)
+- [业务流程图](/参考/业务流程图)
 
 ## 说明
 
